@@ -4,117 +4,361 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PAC 2026</title>
+
 <style>
-body{margin:0;font-family:Arial,sans-serif;color:#333}
-header{background:linear-gradient(to right,#0f172a,#334155);color:white;padding:80px 20px}
-.container{width:90%;max-width:1200px;margin:auto}
-.hero{display:flex;flex-wrap:wrap;gap:40px;align-items:center}
-.hero-text{flex:1}
-.hero-image{flex:1;min-height:350px;border:3px dashed rgba(255,255,255,.5);border-radius:20px;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
-h1{font-size:60px}
-h2{font-size:36px}
-.button{display:inline-block;padding:15px 25px;border-radius:12px;text-decoration:none;font-weight:bold;margin-top:20px;margin-right:10px}
-.btn-green{background:#22c55e;color:white}
-.btn-white{border:1px solid white;color:white}
-.section{padding:80px 20px}
-.services,.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
-.card{border:1px solid #ddd;border-radius:20px;padding:25px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
-.photo,.gallery-box{height:220px;border:2px dashed #ccc;border-radius:15px;display:flex;align-items:center;justify-content:center;color:#777}
-.gray{background:#f1f5f9}
-.contact{background:#0f172a;color:white}
-input,textarea{width:100%;padding:15px;border:none;border-radius:10px;margin-bottom:15px}
-footer{background:black;color:#ccc;text-align:center;padding:30px}
-.whatsapp{position:fixed;bottom:20px;right:20px;background:#22c55e;color:white;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:bold}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f4f4f4;
+color:#333;
+}
+
+.hero{
+background-image:
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.65)),
+url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1920&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+min-height:100vh;
+color:white;
+padding:40px;
+display:flex;
+align-items:center;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+width:100%;
+}
+
+.menu{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:60px;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.logo{
+font-size:42px;
+font-weight:bold;
+}
+
+.logo span{
+color:#22c55e;
+}
+
+.whatsapp-top{
+background:#22c55e;
+color:white;
+padding:14px 25px;
+border-radius:12px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.content{
+max-width:650px;
+}
+
+h1{
+font-size:72px;
+margin-bottom:20px;
+}
+
+h2{
+font-size:42px;
+line-height:1.2;
+margin-bottom:25px;
+}
+
+p{
+font-size:22px;
+line-height:1.6;
+}
+
+.buttons{
+margin-top:40px;
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:18px 30px;
+border-radius:14px;
+font-size:18px;
+font-weight:bold;
+text-decoration:none;
+transition:0.3s;
+}
+
+.btn-green{
+background:#22c55e;
+color:white;
+}
+
+.btn-dark{
+border:2px solid white;
+color:white;
+}
+
+.services{
+padding:80px 40px;
+background:white;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:#fff;
+padding:30px;
+border-radius:20px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.card h3{
+font-size:28px;
+margin-bottom:15px;
+}
+
+.gallery{
+padding:80px 40px;
+background:#f1f5f9;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.gallery-grid img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:20px;
+}
+
+.contact{
+background:#0f172a;
+color:white;
+padding:80px 40px;
+text-align:center;
+}
+
+.contact h2{
+margin-bottom:30px;
+}
+
+.contact a{
+color:#22c55e;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer{
+background:black;
+color:#ccc;
+text-align:center;
+padding:30px;
+}
+
+.whatsapp-float{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#22c55e;
+color:white;
+padding:18px 22px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 4px 15px rgba(0,0,0,0.3);
+}
+
+@media(max-width:768px){
+
+.hero{
+padding:25px;
+}
+
+h1{
+font-size:48px;
+}
+
+h2{
+font-size:32px;
+}
+
+p{
+font-size:18px;
+}
+
+.menu{
+flex-direction:column;
+align-items:flex-start;
+}
+
+}
+
 </style>
 </head>
+
 <body>
 
-<header>
-<div class="container hero">
-<div class="hero-text">
+<section class="hero">
+
+<div class="container">
+
+<div class="menu">
+
+<div class="logo">
+PAC <span>2026</span>
+</div>
+
+<a class="whatsapp-top"
+href="https://wa.me/56983494689"
+target="_blank">
+
+WhatsApp +56 9 8349 4689
+
+</a>
+
+</div>
+
+<div class="content">
+
 <h1>PAC 2026</h1>
-<h2>Regularizaciones, Topografía y Revisión Independiente</h2>
-<p>Especialistas en Ley del Mono, regularización de viviendas y levantamientos topográficos.</p>
 
-<a class="button btn-green" href="#">Solicitar Cotización</a>
-<a class="button btn-white" href="#">WhatsApp</a>
+<h2>
+Regularizaciones, Topografía y Revisión Independiente
+</h2>
+
+<p>
+Especialistas en Ley del Mono, regularización de viviendas,
+levantamientos topográficos y asesoría técnica profesional.
+</p>
+
+<div class="buttons">
+
+<a class="btn btn-green"
+href="https://wa.me/56983494689?text=Hola%20PAC%202026,%20solicito%20una%20cotización"
+target="_blank">
+
+Solicitar Cotización
+
+</a>
+
+<a class="btn btn-dark"
+href="mailto:pacevedoc@gmail.com">
+
+Enviar Correo
+
+</a>
+
 </div>
 
-<div class="hero-image">
-<div>
-<h3>ESPACIO PARA FOTOGRAFÍA PRINCIPAL</h3>
-<p>Aquí puede incorporar fotografías reales.</p>
 </div>
-</div>
-</div>
-</header>
 
-<section class="section">
-<div class="container">
-<h2 style="text-align:center">Nuestros Servicios</h2>
+</div>
 
-<div class="services">
+</section>
+
+<section class="services">
+
+<div class="grid">
 
 <div class="card">
-<div class="photo">Fotografía Servicio</div>
 <h3>Ley del Mono</h3>
-<p>Regularización de viviendas y ampliaciones.</p>
+<p>
+Regularización de viviendas y ampliaciones.
+</p>
 </div>
 
 <div class="card">
-<div class="photo">Fotografía Servicio</div>
 <h3>Topografía</h3>
-<p>Levantamientos topográficos y subdivisiones.</p>
+<p>
+Levantamientos topográficos y subdivisiones.
+</p>
 </div>
 
 <div class="card">
-<div class="photo">Fotografía Servicio</div>
 <h3>Revisor Independiente</h3>
-<p>Revisión técnica y normativa profesional.</p>
+<p>
+Revisión técnica y normativa profesional.
+</p>
 </div>
 
 <div class="card">
-<div class="photo">Fotografía Servicio</div>
 <h3>Arquitectura</h3>
-<p>Planos municipales y proyectos.</p>
+<p>
+Planos municipales y proyectos.
+</p>
 </div>
 
 </div>
-</div>
+
 </section>
 
-<section class="section gray">
-<div class="container">
-<h2 style="text-align:center">Galería de Proyectos</h2>
+<section class="gallery">
 
-<div class="gallery">
-<div class="gallery-box">Proyecto 1</div>
-<div class="gallery-box">Proyecto 2</div>
-<div class="gallery-box">Proyecto 3</div>
+<div class="gallery-grid">
+
+<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200&auto=format&fit=crop">
+
 </div>
 
-</div>
 </section>
 
-<section class="section contact">
-<div class="container">
-<h2 style="text-align:center">Solicite una Evaluación</h2>
+<section class="contact">
 
-<input type="text" placeholder="Nombre">
-<input type="text" placeholder="Teléfono">
-<input type="email" placeholder="Correo">
-<textarea placeholder="Describa su proyecto"></textarea>
+<h2>Contacto</h2>
 
-<a class="button btn-green" href="#">ENVIAR SOLICITUD</a>
-</div>
+<p>
+WhatsApp:
+<a href="https://wa.me/56983494689">
++56 9 8349 4689
+</a>
+</p>
+
+<p>
+Correo:
+<a href="mailto:pacevedoc@gmail.com">
+pacevedoc@gmail.com
+</a>
+</p>
+
 </section>
 
 <footer>
-<p>PAC 2026 © Todos los derechos reservados</p>
-<p>Regularizaciones • Topografía • Arquitectura</p>
+PAC 2026 © Todos los derechos reservados
 </footer>
 
-<a class="whatsapp" href="#">WhatsApp</a>
+<a class="whatsapp-float"
+href="https://wa.me/56983494689"
+target="_blank">
+
+WhatsApp
+
+</a>
 
 </body>
-</html>
+</html>                    
