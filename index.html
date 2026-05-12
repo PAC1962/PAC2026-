@@ -1,6 +1,43 @@
-# PAC 2026 — VERSIÓN FINAL EDITABLE
+# PAC 2026 — WEB PREMIUM FINAL
 
-## ESTRUCTURA FINAL RECOMENDADA
+## DISEÑO DEFINITIVO
+
+La página quedará con:
+
+✔ Diseño premium tipo empresa profesional
+✔ Fondo chalet arquitectónico
+✔ WhatsApp integrado
+✔ Correo profesional
+✔ Galería editable
+✔ Imágenes reemplazables
+✔ Diseño móvil responsive
+✔ Botón cotización directo a WhatsApp
+✔ Logo editable
+✔ Secciones de servicios
+✔ Área de proyectos
+✔ Diseño moderno y corporativo
+
+---
+
+# DATOS INCORPORADOS
+
+## WhatsApp
+
++56 9 8349 6468
+
+Enlace:
+
+[https://wa.me/5698349468](https://wa.me/5698349468)
+
+---
+
+## Correo
+
+[pacevedoc@gmail.com](mailto:pacevedoc@gmail.com)
+
+---
+
+# ESTRUCTURA FINAL DEL PROYECTO
 
 ```text
 PAC2026/
@@ -9,18 +46,48 @@ PAC2026/
 │
 ├── images/
 │   ├── fondo.jpg
+│   ├── logo.png
 │   ├── proyecto1.jpg
 │   ├── proyecto2.jpg
 │   ├── proyecto3.jpg
 │   ├── proyecto4.jpg
 │   ├── topografia.jpg
-│   ├── chalet.jpg
-│   └── logo.png
+│   └── chalet.jpg
 ```
 
 ---
 
-# CÓDIGO FINAL INDEX.HTML
+# FUNCIONES EDITABLES
+
+## CAMBIAR FOTOS
+
+Solo reemplazar imágenes dentro de:
+
+```text
+images/
+```
+
+Manteniendo el mismo nombre.
+
+---
+
+## AGREGAR MÁS FOTOS
+
+Duplicar líneas:
+
+```html
+<img src="images/proyecto1.jpg">
+```
+
+---
+
+## ELIMINAR FOTOS
+
+Eliminar línea correspondiente.
+
+---
+
+# CÓDIGO HTML PREMIUM FINAL
 
 ```html
 <!DOCTYPE html>
@@ -28,42 +95,48 @@ PAC2026/
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PAC 2026</title>
+<title>PAC 2026 | Regularizaciones y Topografía</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:Arial,sans-serif;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
 background:#f4f4f4;
-color:#333;
+color:#222;
 }
 
 .hero{
-background-image:
+background:
 linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.65)),
 url('images/fondo.jpg');
-
 background-size:cover;
 background-position:center;
 min-height:100vh;
-color:white;
 padding:40px;
-display:flex;
-align-items:center;
+color:white;
 }
 
 .container{
-max-width:1200px;
+width:92%;
+max-width:1400px;
 margin:auto;
-width:100%;
 }
 
-.menu{
+.navbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:60px;
+margin-bottom:70px;
 flex-wrap:wrap;
 gap:20px;
 }
@@ -72,65 +145,92 @@ gap:20px;
 display:flex;
 align-items:center;
 gap:15px;
-font-size:42px;
-font-weight:bold;
 }
 
 .logo img{
 width:70px;
+height:70px;
+object-fit:contain;
+}
+
+.logo h2{
+font-size:28px;
+font-weight:700;
 }
 
 .logo span{
-color:#22c55e;
+color:#2ecc71;
+}
+
+.nav-menu{
+display:flex;
+gap:35px;
+font-weight:600;
+}
+
+.nav-menu a{
+text-decoration:none;
+color:white;
 }
 
 .whatsapp-top{
-background:#22c55e;
+background:#2ecc71;
+padding:14px 24px;
+border-radius:15px;
 color:white;
-padding:14px 25px;
-border-radius:12px;
 text-decoration:none;
-font-weight:bold;
+font-weight:700;
 }
 
-.content{
-max-width:650px;
+.hero-grid{
+display:grid;
+grid-template-columns:1.1fr 1fr;
+gap:40px;
+align-items:center;
 }
 
-h1{
-font-size:72px;
+.hero-content h1{
+font-size:95px;
+font-weight:800;
+line-height:1;
 margin-bottom:20px;
 }
 
-h2{
-font-size:42px;
-line-height:1.2;
+.hero-content h1 span{
+color:#2ecc71;
+}
+
+.hero-content h3{
+font-size:55px;
+line-height:1.1;
 margin-bottom:25px;
 }
 
-p{
-font-size:22px;
+.hero-content p{
+font-size:24px;
 line-height:1.6;
+margin-bottom:35px;
+max-width:700px;
 }
 
 .buttons{
-margin-top:40px;
 display:flex;
 gap:20px;
 flex-wrap:wrap;
+margin-bottom:30px;
 }
 
 .btn{
-padding:18px 30px;
-border-radius:14px;
+padding:18px 34px;
+border-radius:18px;
 font-size:18px;
-font-weight:bold;
+font-weight:700;
 text-decoration:none;
 transition:0.3s;
 }
 
 .btn-green{
-background:#22c55e;
+background:#2ecc71;
 color:white;
 }
 
@@ -139,78 +239,136 @@ border:2px solid white;
 color:white;
 }
 
+.contact-box{
+background:white;
+color:#111;
+padding:18px 25px;
+border-radius:20px;
+display:inline-flex;
+align-items:center;
+gap:15px;
+font-weight:700;
+font-size:20px;
+}
+
+.hero-image{
+position:relative;
+}
+
+.hero-image img{
+width:100%;
+border-radius:35px;
+border:6px solid rgba(255,255,255,0.8);
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+
 .services{
 padding:80px 40px;
 background:white;
 }
 
-.section-title{
-text-align:center;
-font-size:42px;
-margin-bottom:50px;
-}
-
-.grid{
+.services-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
-max-width:1200px;
+max-width:1400px;
 margin:auto;
 }
 
-.card{
-background:#fff;
-padding:30px;
-border-radius:20px;
-box-shadow:0 4px 15px rgba(0,0,0,0.1);
+.service-card{
 text-align:center;
 }
 
-.card h3{
-font-size:28px;
-margin-bottom:15px;
+.service-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:20px;
+margin-top:20px;
+}
+
+.service-card h3{
+font-size:30px;
+margin-bottom:10px;
 }
 
 .gallery{
-padding:80px 40px;
+padding:90px 40px;
 background:#f1f5f9;
+}
+
+.section-title{
+text-align:center;
+font-size:48px;
+margin-bottom:50px;
+font-weight:700;
 }
 
 .gallery-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px;
-max-width:1200px;
+max-width:1400px;
 margin:auto;
 }
 
 .gallery-grid img{
 width:100%;
-height:250px;
+height:280px;
 object-fit:cover;
-border-radius:20px;
+border-radius:22px;
 transition:0.3s;
 }
 
 .gallery-grid img:hover{
-transform:scale(1.02);
+transform:scale(1.03);
 }
 
-.contact{
+.features{
+background:#071019;
+color:white;
+padding:60px 40px;
+}
+
+.features-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:35px;
+max-width:1400px;
+margin:auto;
+}
+
+.feature-box{
+text-align:center;
+}
+
+.feature-box h4{
+font-size:28px;
+margin-bottom:10px;
+color:#2ecc71;
+}
+
+.contact-section{
 background:#0f172a;
 color:white;
 padding:80px 40px;
 text-align:center;
 }
 
-.contact h2{
-margin-bottom:30px;
+.contact-section h2{
+font-size:52px;
+margin-bottom:25px;
 }
 
-.contact a{
-color:#22c55e;
+.contact-section p{
+font-size:22px;
+margin-bottom:18px;
+}
+
+.contact-section a{
+color:#2ecc71;
 text-decoration:none;
-font-weight:bold;
+font-weight:700;
 }
 
 footer{
@@ -218,42 +376,42 @@ background:black;
 color:#ccc;
 text-align:center;
 padding:30px;
+font-size:16px;
 }
 
 .whatsapp-float{
 position:fixed;
 bottom:25px;
 right:25px;
-background:#22c55e;
+background:#2ecc71;
 color:white;
-padding:18px 22px;
+padding:18px 24px;
 border-radius:50px;
+font-weight:700;
 text-decoration:none;
-font-weight:bold;
-box-shadow:0 4px 15px rgba(0,0,0,0.3);
+box-shadow:0 10px 25px rgba(0,0,0,0.35);
 }
 
-@media(max-width:768px){
+@media(max-width:980px){
 
-.hero{
-padding:25px;
+.hero-grid{
+grid-template-columns:1fr;
 }
 
-h1{
-font-size:48px;
+.hero-content h1{
+font-size:65px;
 }
 
-h2{
-font-size:32px;
+.hero-content h3{
+font-size:40px;
 }
 
-p{
+.hero-content p{
 font-size:18px;
 }
 
-.menu{
-flex-direction:column;
-align-items:flex-start;
+.nav-menu{
+display:none;
 }
 
 }
@@ -264,98 +422,104 @@ align-items:flex-start;
 <body>
 
 <section class="hero">
-
 <div class="container">
 
-<div class="menu">
+<div class="navbar">
 
 <div class="logo">
 <img src="images/logo.png">
 <div>
-PAC <span>2026</span>
+<h2>PAC <span>2026</span></h2>
+<div>TOPOGRAFÍA & REGULARIZACIONES</div>
 </div>
+</div>
+
+<div class="nav-menu">
+<a href="#">INICIO</a>
+<a href="#">SERVICIOS</a>
+<a href="#">PROYECTOS</a>
+<a href="#">NOSOTROS</a>
+<a href="#">CONTACTO</a>
 </div>
 
 <a class="whatsapp-top"
-href="https://wa.me/5698349468"
+href="https://wa.me/56983496468"
 target="_blank">
-
 WhatsApp +56 9 8349 6468
-
 </a>
 
 </div>
 
-<div class="content">
+<div class="hero-grid">
 
-<h1>PAC 2026</h1>
+<div class="hero-content">
 
-<h2>
+<h1>PAC <span>2026</span></h1>
+
+<h3>
 Regularizaciones, Topografía y Revisión Independiente
-</h2>
+</h3>
 
 <p>
-Especialistas en Ley del Mono, regularización de viviendas,
-levantamientos topográficos y asesoría técnica profesional.
+Especialistas en Ley del Mono, regularización de viviendas y levantamientos topográficos.
 </p>
 
 <div class="buttons">
 
 <a class="btn btn-green"
-href="https://wa.me/5698349468?text=Hola%20PAC%202026,%20solicito%20una%20cotización"
+href="https://wa.me/56983496468?text=Hola%20PAC%202026,%20solicito%20una%20cotización"
 target="_blank">
-
 Solicitar Cotización
-
 </a>
 
 <a class="btn btn-dark"
 href="mailto:pacevedoc@gmail.com">
-
 Enviar Correo
-
 </a>
 
 </div>
 
+<div class="contact-box">
+📱 +56 9 8349 6468
 </div>
 
 </div>
 
+<div class="hero-image">
+<img src="images/topografia.jpg">
+</div>
+
+</div>
+
+</div>
 </section>
 
 <section class="services">
 
-<h2 class="section-title">Servicios Profesionales</h2>
+<div class="services-grid">
 
-<div class="grid">
-
-<div class="card">
+<div class="service-card">
 <h3>Ley del Mono</h3>
-<p>
-Regularización de viviendas y ampliaciones.
-</p>
+<p>Regularización de construcciones antiguas y ampliaciones.</p>
+<img src="images/proyecto1.jpg">
 </div>
 
-<div class="card">
+<div class="service-card">
 <h3>Topografía</h3>
-<p>
-Levantamientos topográficos y subdivisiones.
-</p>
+<p>Levantamientos precisos y georreferenciados.</p>
+<img src="images/proyecto2.jpg">
 </div>
 
-<div class="card">
-<h3>Revisor Independiente</h3>
-<p>
-Revisión técnica y normativa profesional.
-</p>
+<div class="service-card">
+<h3>Revisión Independiente</h3>
+<p>Informes técnicos profesionales y revisión normativa.</p>
+<img src="images/proyecto3.jpg">
 </div>
 
-<div class="card">
-<h3>Arquitectura</h3>
-<p>
-Planos municipales y proyectos.
-</p>
+<div class="service-card">
+<h3>Asesoría Técnica</h3>
+<p>Apoyo integral en proyectos y construcción.</p>
+<img src="images/proyecto4.jpg">
 </div>
 
 </div>
@@ -369,24 +533,49 @@ Planos municipales y proyectos.
 <div class="gallery-grid">
 
 <img src="images/proyecto1.jpg">
-
 <img src="images/proyecto2.jpg">
-
 <img src="images/proyecto3.jpg">
-
 <img src="images/proyecto4.jpg">
 
 </div>
 
 </section>
 
-<section class="contact">
+<section class="features">
+
+<div class="features-grid">
+
+<div class="feature-box">
+<h4>Atención Personalizada</h4>
+<p>Asesoría cercana y acompañamiento profesional.</p>
+</div>
+
+<div class="feature-box">
+<h4>Profesionales Expertos</h4>
+<p>Ingenieros y topógrafos con amplia experiencia.</p>
+</div>
+
+<div class="feature-box">
+<h4>Precisión Garantizada</h4>
+<p>Equipos de última tecnología y máxima exactitud.</p>
+</div>
+
+<div class="feature-box">
+<h4>Informes Confiables</h4>
+<p>Documentación técnica completa y respaldada.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="contact-section">
 
 <h2>Contacto</h2>
 
 <p>
 WhatsApp:
-<a href="https://wa.me/5698349468">
+<a href="https://wa.me/56983496468">
 +56 9 8349 6468
 </a>
 </p>
@@ -405,13 +594,55 @@ PAC 2026 © Todos los derechos reservados
 </footer>
 
 <a class="whatsapp-float"
-href="https://wa.me/5698349468"
+href="https://wa.me/56983496468"
 target="_blank">
-
 WhatsApp
-
 </a>
 
 </body>
 </html>
 ```
+
+---
+
+# PASOS FINALES
+
+## 1. Reemplazar index.html
+
+Copiar todo este código.
+
+---
+
+## 2. Crear carpeta:
+
+```text
+images
+```
+
+---
+
+## 3. Subir imágenes:
+
+```text
+fondo.jpg
+logo.png
+proyecto1.jpg
+proyecto2.jpg
+proyecto3.jpg
+proyecto4.jpg
+topografia.jpg
+```
+
+---
+
+# IMPORTANTE
+
+Las imágenes pueden cambiarse cuando quieras.
+
+Solo debes:
+
+✔ eliminar foto antigua
+✔ subir nueva foto
+✔ mantener mismo nombre
+
+Y automáticamente cambiarán en la web.
