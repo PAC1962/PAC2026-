@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAC | Arquitectura y Construcción</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { --main-blue: #0056b3; --light-gray: #f8f9fa; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        
+        /* Galería */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
+        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; border: 2px solid #eee; }
+        
+        /* Botones y Formulario */
+        .btn { background: var(--main-blue); color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; display: inline-block; }
+        form { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
+        input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        
+        /* WhatsApp Flotante */
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 15px 20px; border-radius: 50px; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>PAC Arquitectura & Construcción</h1>
+        </header>
+
+        <section>
+            <h2>Galería de Proyectos</h2>
+            <div class="gallery">
+                <!-- CAMBIA LOS ENLACES DE LAS FOTOS AQUÍ -->
+                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233" alt="Proyecto 1">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab" alt="Proyecto 2">
+                <img src="https://images.unsplash.com/photo-1541888946425-d81bb193e25b" alt="Proyecto 3">
+            </div>
+        </section>
+
+        <section style="margin-top: 40px;">
+            <h2>Contacto</h2>
+            <form action="mailto:tucorreo@ejemplo.com" method="post" enctype="text/plain">
+                <input type="text" name="Nombre" placeholder="Tu Nombre">
+                <textarea name="Mensaje" placeholder="Detalle de tu proyecto"></textarea>
+                <button type="submit" class="btn">Enviar Email</button>
+            </form>
+        </section>
+    </div>
+
+    <a href="https://wa.me/56983496468?text=Hola,%20quisiera%20cotizar." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
